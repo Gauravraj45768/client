@@ -22,7 +22,9 @@
       messagesDiv.innerHTML += `<p>Received: ${event.data}</p>`;
     };
 
- 
+    socket.onclose = () => {
+      console.log('Disconnected from WebSocket server');
+    };
 
     function sendMessage() {
       const messageInput = document.getElementById('messageInput');
